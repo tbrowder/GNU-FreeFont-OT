@@ -1,0 +1,25 @@
+{
+  "auth": "zef:tbrowder",
+  "authors": [
+    "Tom Browder"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "Provides routines for using the GNU FreeType font in OpenType format \n",
+  "license": "Artistic-2.0",
+  "name": "GNU::FreeFont-OT",
+  "perl": "6.d",
+  "provides": {
+    "GNU::FreeFont-OT": "lib/GNU/FreeFont-OT.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}
