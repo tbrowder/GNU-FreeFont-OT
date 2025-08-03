@@ -31,6 +31,14 @@ DESCRIPTION
 
 See [GNU FreeFont](https://www.gnu.org/software/freefont/sources/) for much more information on the sources and Unicode coverage of the FontFactory GNU FreeFonts collection.
 
+Installation requirements
+=========================
+
+See [Installation](./Installation.md) for system requiremnts before using this package.
+
+Using this package
+==================
+
 The following tables show the hash codes (keys) to use to select the desired font objects. The first table uses codes derived from the FreeFont name. The second table shows the original Adobe names
 
 Note the *Code* and *Code2* columns. Each row contains equivalent code you may use to select the FreeFont face. You can also use the reference number. See <Installation|./Installation.md> for necessary system packages for use on Linux, MacOS, and Windows operating systems.
