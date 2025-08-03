@@ -1,19 +1,40 @@
+[![Actions Status](https://github.com/tbrowder/GNU-FreeFont-OT/actions/workflows/linux.yml/badge.svg)](https://github.com/tbrowder/GNU-FreeFont-OT/actions) [![Actions Status](https://github.com/tbrowder/GNU-FreeFont-OT/actions/workflows/macos.yml/badge.svg)](https://github.com/tbrowder/GNU-FreeFont-OT/actions) [![Actions Status](https://github.com/tbrowder/GNU-FreeFont-OT/actions/workflows/windows.yml/badge.svg)](https://github.com/tbrowder/GNU-FreeFont-OT/actions)
+
 NAME
 ====
 
-**GNU::FreeFont-OT** - Provides routines for using the GNU FreeType font in OpenType format 
+**GNU::FreeFont-OT** - Provides a collection of GNU FreeType fonts for use in Raku PDF creation
 
 SYNOPSIS
 ========
 
 ```raku
+use Test;
+use PDF::Content;
 use GNU::FreeFont-OT;
+
+my %fonts = get-loaded-fonts-hash;
+
+# Select the GNU FreeFont 'FreeSerif' to be loaded
+# as an object to be used to print text on a PDF page:
+my $font  = %fonts<se>;
+isa-ok $font, PDF::Content::FontObj; 
+# OUTPUT: «
+ok 1 - The object is-a 'PDF::Content::FontObj'
+1..1
+␤»
 ```
 
 DESCRIPTION
 ===========
 
-**GNU::FreeFont-OT** is ...
+**GNU::FreeFont-OT** is a Raku package that provides easy handling of the set of GNU FreeFont OpenType fonts which descended from the classic Adobe Type 1 free fonts (shown in Table 2 below). Unlike the original Adobe fonts, these fonts also include thousands of Unicode characters that can be used with many languages. The fonts are also among the few, freely-available fonts that have Type 1 kerning.
+
+See [GNU FreeFont](https://www.gnu.org/software/freefont/sources/) for much more information on the sources and Unicode coverage of the FontFactory GNU FreeFonts collection.
+
+The following tables show the hash codes (keys) to use to select the desired font objects. The first table uses codes derived from the FreeFont name. The second table shows the original Adobe names
+
+Note the *Code* and *Code2* columns. Each row contains equivalent code you may use to select the FreeFont face. You can also use the reference number. See <Installation|./Installation.md> for necessary system packages for use on Linux, MacOS, and Windows operating systems.
 
 AUTHOR
 ======
