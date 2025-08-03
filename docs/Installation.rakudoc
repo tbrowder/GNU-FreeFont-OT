@@ -31,9 +31,7 @@ If this package does not install the fonts for your
 system you can obtain them from the following
 sources:
 
-Then you should install them manual them manually:
-
-On Debian:
+On systems derived from Debian:
 
 =begin code
 $ sudo aptitude install fonts-freefont-otf
@@ -51,9 +49,24 @@ On Windows:
 $ choco install font-freefont
 =end code
 
-
 On other systems the files may be downloaded from
-L<https://ftp.gnu.org/gnu/freefont> and installed in any desired
-place.
+L<https://ftp.gnu.org/gnu/freefont> and installed 
+in the following locations for the following systems:
+
+On Linux:
+=begin code
+/usr
+=end code
+
+On MacOS:
+=begin code
+/usr
+=end code
+
+On Windows:
+=begin code
+/usr
+=end code
+
 
 =end pod

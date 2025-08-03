@@ -34,14 +34,16 @@ See [GNU FreeFont](https://www.gnu.org/software/freefont/sources/) for much more
 Installation requirements
 =========================
 
-See [Installation](./Installation.md) for system requiremnts before using this package.
+Your system may not have all the required packages to support this Raku module. See [Installation](./Installation.md) for those requiremnts to ensure they are installed before running `zef install GNU::FreeFont-OT`.
 
-Using this package
-==================
+Using this module
+=================
 
-The following tables show the hash codes (keys) to use to select the desired font objects. The first table uses codes derived from the FreeFont name. The second table shows the original Adobe names
+The following tables show the hash codes (keys) to use to select the desired font objects. The first table uses codes derived from the GNU FreeFont font family name plus any other descriptors: weight ('Bold'), and slant ('italic' or 'oblique'). The second table shows the Adobe heritage font name from which it was derived.
 
-Note the *Code* and *Code2* columns. Each row contains equivalent code you may use to select the FreeFont face. You can also use the reference number. See <Installation|./Installation.md> for necessary system packages for use on Linux, MacOS, and Windows operating systems.
+Note the *Code* and *Code2* columns. Each row contains equivalent code you may use to select the desired GNU FreeFont face. 
+
+NOTE: in a future revision you will be able use the reference number to select a font face.
 
 Table 1
 -------
