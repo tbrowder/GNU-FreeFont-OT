@@ -1,1 +1,3 @@
 Fix problem with alias names. Does it need to be a link or a factory process?
+
+  - consider using the system FontFactory::Type1 uses
