@@ -1,4 +1,5 @@
 =begin pod
+
 =head1 NAME
 
 B<GNU::FreeFont-OT> - Provides a collection of GNU FreeType fonts for

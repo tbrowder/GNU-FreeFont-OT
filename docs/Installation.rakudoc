@@ -5,47 +5,52 @@
 The following system packages need to be installed to use all the
 features of this module.
 
-=begin item
-The FontConfig library
+=head2 The FontConfig library
 
 On Debian:
+
 =begin code
 $ sudo aptitude install fontconfig
 =end code
 
 On MacOS:
+
 =begin code
 $ brew install fontconfig
 =end code
 
 On Windows:
+
 =begin code
 $ choco install fontconfig # if available
 =end code
 
-=end item
+=head1 Other systems
 
-=config :page-break
+If this package does not install the fonts for your
+system you can obtain them from the following
+sources:
 
-=begin item
-The FontFactory font files
+Then you should install them manual them manually:
 
 On Debian:
+
 =begin code
 $ sudo aptitude install fonts-freefont-otf
 =end code
 
 On MacOS:
+
 =begin code
 $ brew install --cask font-freefont
 =end code
 
 On Windows:
+
 =begin code
 $ choco install font-freefont
 =end code
 
-=end item
 
 On other systems the files may be downloaded from
 L<https://ftp.gnu.org/gnu/freefont> and installed in any desired
