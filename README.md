@@ -18,11 +18,10 @@ my %fonts = get-loaded-fonts-hash;
 # Select the GNU FreeFont 'FreeSerif' to be loaded
 # as an object to be used to print text on a PDF page:
 my $font  = %fonts<se>;
-isa-ok $font, PDF::Content::FontObj; 
-# OUTPUT: «
+isa-ok $font, PDF::Content::FontObj;
+# OUTPUT:
 ok 1 - The object is-a 'PDF::Content::FontObj'
 1..1
-␤»
 ```
 
 DESCRIPTION
@@ -35,6 +34,32 @@ See [GNU FreeFont](https://www.gnu.org/software/freefont/sources/) for much more
 The following tables show the hash codes (keys) to use to select the desired font objects. The first table uses codes derived from the FreeFont name. The second table shows the original Adobe names
 
 Note the *Code* and *Code2* columns. Each row contains equivalent code you may use to select the FreeFont face. You can also use the reference number. See <Installation|./Installation.md> for necessary system packages for use on Linux, MacOS, and Windows operating systems.
+
+Table 1
+-------
+
+<table class="pod-table">
+<caption>The GNU FontFactory Collection</caption>
+<thead><tr>
+<th>GNU FreeFont</th> <th>Code</th> <th>Code2</th> <th>Reference No.</th>
+</tr></thead>
+<tbody>
+<tr> <td>Free Serif</td> <td>se</td> <td>t</td> <td>1</td> </tr> <tr> <td>Free Serif Bold</td> <td>seb</td> <td>tb</td> <td>2</td> </tr> <tr> <td>Free Serif Italic</td> <td>sei</td> <td>ti</td> <td>3</td> </tr> <tr> <td>Free Serif Bold Italic</td> <td>sebi</td> <td>tbi</td> <td>4</td> </tr> <tr> <td>Free Sans</td> <td>sa</td> <td>h</td> <td>5</td> </tr> <tr> <td>Free Sans Bold</td> <td>sab</td> <td>hb</td> <td>6</td> </tr> <tr> <td>Free Sans Oblique</td> <td>sao</td> <td>ho</td> <td>7</td> </tr> <tr> <td>Free Sans Bold Oblique</td> <td>sabo</td> <td>hbo</td> <td>8</td> </tr> <tr> <td>Free Mono</td> <td>m</td> <td>c</td> <td>9</td> </tr> <tr> <td>Free Mono Bold</td> <td>mb</td> <td>cb</td> <td>10</td> </tr> <tr> <td>Free Mono Oblique</td> <td>mo</td> <td>co</td> <td>11</td> </tr> <tr> <td>Free Mono Bold Oblique</td> <td>mbo</td> <td>cbo</td> <td>12</td> </tr>
+</tbody>
+</table>
+
+Table 2
+-------
+
+<table class="pod-table">
+<caption>The Equivalent Adobe Type 1 Fonts</caption>
+<thead><tr>
+<th>Adobe Type 1 Name</th> <th>Code</th> <th>Code2</th> <th>Reference No.</th>
+</tr></thead>
+<tbody>
+<tr> <td>Times</td> <td>se</td> <td>t</td> <td>1</td> </tr> <tr> <td>Times Bold</td> <td>seb</td> <td>tb</td> <td>2</td> </tr> <tr> <td>Times Italic</td> <td>sei</td> <td>ti</td> <td>3</td> </tr> <tr> <td>Times Bold Italic</td> <td>sebi</td> <td>tbi</td> <td>4</td> </tr> <tr> <td>Helvetica</td> <td>sa</td> <td>h</td> <td>5</td> </tr> <tr> <td>Helvetica Bold</td> <td>sab</td> <td>hb</td> <td>6</td> </tr> <tr> <td>Helvetica Oblique</td> <td>sao</td> <td>ho</td> <td>7</td> </tr> <tr> <td>Helvetica Bold Oblique</td> <td>sabo</td> <td>hbo</td> <td>8</td> </tr> <tr> <td>Courier</td> <td>m</td> <td>c</td> <td>9</td> </tr> <tr> <td>Courier Bold</td> <td>mb</td> <td>cb</td> <td>10</td> </tr> <tr> <td>Courier Oblique</td> <td>mo</td> <td>co</td> <td>11</td> </tr> <tr> <td>Courier Bold Oblique</td> <td>mbo</td> <td>cbo</td> <td>12</td> </tr>
+</tbody>
+</table>
 
 AUTHOR
 ======

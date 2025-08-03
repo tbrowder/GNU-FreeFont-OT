@@ -75,21 +75,20 @@ sub get-loaded-fonts-hash(:$debug --> Hash) is export {
     %fonts<cbo> = load-font :file($ffcbo); # deb 12, :subset;
 
     # "aliases" for the real names
-    %fonts<e>   = %fonts<t>;
-    %fonts<eb>  = %fonts<tb>;
-    %fonts<ei>  = %fonts<ti>;
-    %fonts<ebi> = %fonts<tbi>;
+    %fonts<se>   = %fonts<t>;
+    %fonts<seb>  = %fonts<tb>;
+    %fonts<sei>  = %fonts<ti>;
+    %fonts<sebi> = %fonts<tbi>;
 
-    %fonts<a>   = %fonts<h>;
-    %fonts<ab>  = %fonts<hb>;
-    %fonts<ao>  = %fonts<ho>;
-    %fonts<abo> = %fonts<hbo>;
+    %fonts<sa>   = %fonts<h>;
+    %fonts<sab>  = %fonts<hb>;
+    %fonts<sao>  = %fonts<ho>;
+    %fonts<sabo> = %fonts<hbo>;
 
-    %fonts<m>   = %fonts<c>;
-    %fonts<mb>  = %fonts<cb>;
-    %fonts<mo>  = %fonts<co>;
-    %fonts<mbo> = %fonts<cbo>;
-
+    %fonts<m>    = %fonts<c>;
+    %fonts<mb>   = %fonts<cb>;
+    %fonts<mo>   = %fonts<co>;
+    %fonts<mbo>  = %fonts<cbo>;
 
     %fonts;
 }
