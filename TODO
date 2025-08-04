@@ -1,3 +1,10 @@
-Fix problem with alias names. Does it need to be a link or a factory process?
+Add Numeric aliases
 
+Ensure users do NOT use uppercase codes or aliases
+
+=done:
+2025-08-04:
+# used FFT1 and added more special aliases
+# tested codes and aliases to ensure no overlaps
+Fix problem with alias names.
   - consider using the system FontFactory::Type1 uses
