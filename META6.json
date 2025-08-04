@@ -6,13 +6,12 @@
   "build-depends": [
   ],
   "depends": [
+    "OO::Monitors",
     "MacOS::NativeLib",
     "PDF::Font::Loader::HarfBuzz",
     "PDF::Font::Loader",
     "PDF::Content",
-    "Font::AFM",
     "Data::Dump",
-    "FontFactory::Type1",
     "QueryOS"
   ],
   "description": "Provides routines for using the GNU FreeType font in OpenType format \n",
@@ -20,7 +19,10 @@
   "name": "GNU::FreeFont-OT",
   "perl": "6.d",
   "provides": {
-    "GNU::FreeFont-OT": "lib/GNU/FreeFont-OT.rakumod"
+    "GNU::FreeFont-OT": "lib/GNU/FreeFont-OT.rakumod",
+    "GNU::FreeFont-OT::Classes": "lib/GNU/FreeFont-OT/Classes.rakumod",
+    "GNU::FreeFont-OT::Subs": "lib/GNU/FreeFont-OT/Subs.rakumod",
+    "GNU::FreeFont-OT::Vars": "lib/GNU/FreeFont-OT/Vars.rakumod"
   },
   "resources": [
   ],

@@ -2,6 +2,9 @@ use Test;
 
 my @modules = <
     GNU::FreeFont-OT
+    GNU::FreeFont-OT::Classes
+    GNU::FreeFont-OT::Subs
+    GNU::FreeFont-OT::Vars
 >;
 
 plan @modules.elems;
