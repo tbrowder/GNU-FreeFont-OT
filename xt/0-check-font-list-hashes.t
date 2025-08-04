@@ -14,10 +14,13 @@ my @pcodes = <
 >;
 my %fi = %Fonts.invert; # codes (values) become keys
 my @fc;
+my @fn1; 
 for @pcodes -> $code {
     if %fi{$code}:exists {
         # good, save it
         @fc.push: $code;   
+        # also save the font name
+        @fn1.push: %fi{$code};
     }
     else {
         say "ERROR: primary code '$code' not found" if $debug;
@@ -25,8 +28,6 @@ for @pcodes -> $code {
 }
 # set comparison
 cmp-ok Set(@pcodes), 'cmp', Set(@fc), "primary code sets are equal";
-
-=finish
 
 # now test the aliases
 # aliases should NOT have any of the primary codes as values
@@ -36,9 +37,20 @@ cmp-ok Set(@pcodes), 'cmp', Set(@fc), "primary code sets are equal";
 my %F  = %Fonts;       # font-name => code
 my %Fa = %FontAliases; # font-name => alias
 my @fa = [];
+my @fn2 = [];
 for %Fa.kv -> $fname, $alias {
+   @fn2.push: $fname;
    @fa.push: $alias;
 }
 
+# set comparisons
+# font face name sets
+cmp-ok Set(@fn1), 'cmp', Set(@fn2), "font face name sets are equal";
+
+# font face name codes and aliases MUST NOT OVERLAP
+my $sa = Set(@pcodes);
+my $sb = Set(@fa);
+
+is-deeply $sa (&) $sb, Set.new, "codes and aliases do NOT overlap"; 
 
 done-testing;
