@@ -2,6 +2,7 @@ use Test;
 
 my @modules = <
     GNU::FreeFont-OT
+    GNU::FreeFont-OT::FontList
     GNU::FreeFont-OT::Classes
     GNU::FreeFont-OT::Subs
     GNU::FreeFont-OT::Vars

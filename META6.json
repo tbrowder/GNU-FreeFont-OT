@@ -21,6 +21,7 @@
   "provides": {
     "GNU::FreeFont-OT": "lib/GNU/FreeFont-OT.rakumod",
     "GNU::FreeFont-OT::Classes": "lib/GNU/FreeFont-OT/Classes.rakumod",
+    "GNU::FreeFont-OT::FontList": "lib/GNU/FreeFont-OT/FontList.rakumod",
     "GNU::FreeFont-OT::Subs": "lib/GNU/FreeFont-OT/Subs.rakumod",
     "GNU::FreeFont-OT::Vars": "lib/GNU/FreeFont-OT/Vars.rakumod"
   },
