@@ -1,8 +1,10 @@
 use OO::Monitors;
 
+use PDF::Content::FontObj;
+
 unit module GNU::FreeFont-OT::Classes;
 
-use PDF::Content::FontObj;
+use GNU::FreeFont-OT::FontList;
 
 monitor GFF is export {
     has $.id = 'gff';
@@ -15,35 +17,27 @@ monitor GFF is export {
         $name 
         --> PDF::Content::FontObj
         ) {
-        my $key;
-        my $alias;
-        my $number;
+        my $code;  #  =  $codes-rx;
+        my $alias; #  = $aliases-rx;
 
         # examples of valid names:
-        #   t,  cb
-        # aliases
-        #   se, mb
-        # numbers
-        #   1..12
-
-        #...
-        if $name ~~ /^ .../ {
-            $key = $alias;
+        #   codes
+        #     t,  cb
+        #   aliases
+        #     se, mb
+        #     1..12
+        if $name ~~ /$codes-rx/ {
+            $code = $name;
+        }
+        elsif $name ~~ /$aliases-rx/ {
+            $alias = $name;
         }
         else {
             say qq:to/HERE/;
-            FATAL: ...
-                   Exiting ..,
+            FATAL: Input \$name '$name' is not recognized.
+                   Exiting...
             HERE
             exit(1);
-        }
-
-        # if we have the font return it
-        if %!fkeys{}:exists {
-        }
-        elsif %!fkeys2{}:exists {
-        }
-        else {
         }
     }
 }

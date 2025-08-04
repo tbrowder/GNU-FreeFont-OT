@@ -1,8 +1,8 @@
 unit module GNU::FreeFont-OT::FontList;
 
-constant %Fonts is export =
+constant %Fonts is export = %(
     # These are the fonts from GNU FreeFont
-    #   with their primary keys (from their Adobe heritage)
+    #   with their primary codes (from their Adobe heritage)
     FreeSerif            => "t",
     FreeSerif-Italic     => "ti",  # also to
     FreeSerif-Bold       => "tb",
@@ -17,12 +17,12 @@ constant %Fonts is export =
     FreeMono-Oblique     => "co",  # also ci
     FreeMono-Bold        => "cb",
     FreeMono-BoldOblique => "cbo", # also cbi, cob, cib
-;
+);
 
 # invert the hash and have short names (aliases) as keys
 our %FontAliases is export = %Fonts.invert;
 
-# add some extra keys
+# add some extra keys called "aliases"
 # Courier/FreeMono
 %FontAliases<ci>  = "FreeMono-Oblique";
 %FontAliases<cbi> = "FreeMono-BoldOblique";
@@ -65,3 +65,6 @@ our %FontAliases is export = %Fonts.invert;
 %FontAliases<seob> = "FreeSerif-BoldItalic";
 %FontAliases<seib> = "FreeSerif-BoldItalic";
 
+# create some sets to match against
+our $codes-rx   is export = %Fonts.keys.join("|");
+our $aliases-rx is export = %FontAliases.keys.join("|");
