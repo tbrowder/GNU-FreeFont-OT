@@ -12,6 +12,7 @@ my @pcodes = <
     h ho hb hbo 
     c co cb cbo
 >;
+
 my %fi = %Fonts.invert; # codes (values) become keys
 my @fc;
 my @fn1; 
@@ -35,7 +36,7 @@ cmp-ok Set(@pcodes), 'cmp', Set(@fc), "primary code sets are equal";
 #   recognized font faces)
  
 my %F  = %Fonts;       # font-name => code
-my %Fa = %FontAliases; # font-name => alias
+my %Fa = %FontAliases; # alias     => font-name
 my @fa = [];
 my @fn2 = [];
 for %Fa.kv -> $fname, $alias {

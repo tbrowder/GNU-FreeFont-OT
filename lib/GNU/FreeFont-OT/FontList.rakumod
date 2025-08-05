@@ -92,9 +92,9 @@ our %FontAliases is export = %Fonts.invert;
 %FontAliases<mob> = "FreeMono-BoldOblique";
 %FontAliases<mbo> = "FreeMono-BoldOblique";
 
-
 # create some sets to match against
 our $codes-rx   is export = %Fonts.values.join("|");
+
 # remove codes from aliases
 for %Fonts.kv -> $k, $code {
     if %FontAliases{$code}:exists {

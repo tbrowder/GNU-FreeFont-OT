@@ -11,10 +11,12 @@ unit monitor  GNU::FreeFont-OT;
 use GNU::FreeFont-OT::FontList;
 use GNU::FreeFont-OT::FontSources;
 
-has %.active-fonts;
+has %.loaded-fonts;
+has %.font-file-paths;
 
 submethod TWEAK {
-    #%!fonts = get-loaded-fonts-hash :$debug;
+    my $debug = 0;
+    %!font-file-paths = get-font-file-paths-hash :$debug;
 }
 
 method get-font(

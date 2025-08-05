@@ -10,6 +10,16 @@ my $ff = GNU::FreeFont-OT.new;
 
 my ($font, $font2);
 
+# test the sharing of the same font
+if not $debug {
+    is $font, $font2;
+}
+else {
+    say "WARNING: This test MUST pass in order to publish";
+}
+
+=finish
+
 $font  = $ff.fonts<t>;
 $font2 = $ff.fonts<sa>;
 

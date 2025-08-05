@@ -2,10 +2,10 @@ unit module GNU::FreeFont-OT::FontSources;
 
 use MacOS::NativeLib "*";
 
-use PDF::Font::Loader::HarfBuzz;
-use PDF::Font::Loader :load-font;
-use PDF::Content;
-use PDF::Content::FontObj;
+#use PDF::Font::Loader::HarfBuzz;
+#use PDF::Font::Loader :load-font;
+#use PDF::Content;
+#use PDF::Content::FontObj;
 
 use QueryOS;
 
@@ -15,7 +15,9 @@ my $Ld = "/usr/share/fonts/opentype/freefont";
 my $Md = "/opt/homebrew/Caskroom/font-freefont/20120503/freefont-20120503";
 my $Wd = "/usr/share/fonts/opentype/freefont";
 
-sub get-loaded-fonts-hash(:$debug --> Hash) is export {
+#sub get-loaded-fonts-hash(:$debug --> Hash) is export {
+
+sub get-font-file-paths-hash(:$debug --> Hash) is export {
     my $fontdir;
     if $os.is-linux {
         $fontdir = $Ld;
@@ -56,23 +58,26 @@ sub get-loaded-fonts-hash(:$debug --> Hash) is export {
 
     my %fonts;
 
+    # get paths, dont load
+    # %fonts<t>   = load :file($fft); # deb 12, :subset;
+
     # Times-Roman
-    %fonts<t>   = load-font :file($fft); # deb 12, :subset;
-    %fonts<tb>  = load-font :file($fftb); # deb 12, :subset;
-    %fonts<ti>  = load-font :file($ffti); # deb 12, :subset;
-    %fonts<tbi> = load-font :file($fftbi); # deb 12, :subset;
+    %fonts<t>   = ($fft); # deb 12, :subset;
+    %fonts<tb>  = ($fftb); # deb 12, :subset;
+    %fonts<ti>  = ($ffti); # deb 12, :subset;
+    %fonts<tbi> = ($fftbi); # deb 12, :subset;
 
     # Helvetica
-    %fonts<h>   = load-font :file($ffh); # deb 12, :subset;
-    %fonts<hb>  = load-font :file($ffhb); # deb 12, :subset;
-    %fonts<ho>  = load-font :file($ffho); # deb 12, :subset;
-    %fonts<hbo> = load-font :file($ffhbo); # deb 12, :subset;
+    %fonts<h>   = ($ffh); # deb 12, :subset;
+    %fonts<hb>  = ($ffhb); # deb 12, :subset;
+    %fonts<ho>  = ($ffho); # deb 12, :subset;
+    %fonts<hbo> = ($ffhbo); # deb 12, :subset;
 
    # Courier
-    %fonts<c>   = load-font :file($ffc); # deb 12, :subset;
-    %fonts<cb>  = load-font :file($ffcb); # deb 12, :subset;
-    %fonts<co>  = load-font :file($ffco); # deb 12, :subset;
-    %fonts<cbo> = load-font :file($ffcbo); # deb 12, :subset;
+    %fonts<c>   = ($ffc); # deb 12, :subset;
+    %fonts<cb>  = ($ffcb); # deb 12, :subset;
+    %fonts<co>  = ($ffco); # deb 12, :subset;
+    %fonts<cbo> = ($ffcbo); # deb 12, :subset;
 
     # "aliases" for the real names
     %fonts<se>   = %fonts<t>;
@@ -90,5 +95,5 @@ sub get-loaded-fonts-hash(:$debug --> Hash) is export {
     %fonts<mo>   = %fonts<co>;
     %fonts<mbo>  = %fonts<cbo>;
 
-    %fonts;
+    %fonts; # hash of font file paths
 }
