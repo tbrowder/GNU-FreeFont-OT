@@ -55,17 +55,17 @@ my $sb = Set(@fa);
 is-deeply $sa (&) $sb, Set.new, "codes and aliases do NOT overlap"; 
 
 # test the codes and aliases hashes
-my @test-names = <ti o t 1 mb>;
+my @test-names = <ti o t 1 mb 12 13>;
 my $tnames = @test-names.join(" ");
 say "Using test names: '$tnames'";
 my $s;
 for @test-names -> $n {
-    if %codes-hash{$n}:exists {
-        $s = %codes-hash{$n};
+    if $codes-hash{$n}:exists {
+        $s = $codes-hash{$n};
         say "name '$n' is a code: '$s'";
     }
-    elsif %aliases-hash{$n}:exists {
-        $s = %aliases-hash{$n};
+    elsif $aliases-hash{$n}:exists {
+        $s = $aliases-hash{$n};
         say "name '$n' is an alias: '$s'";
     }
     else {

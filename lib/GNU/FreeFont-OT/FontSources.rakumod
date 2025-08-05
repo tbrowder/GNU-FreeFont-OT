@@ -62,22 +62,22 @@ sub get-font-file-paths-hash(:$debug --> Hash) is export {
     # %fonts<t>   = load :file($fft); # deb 12, :subset;
 
     # Times-Roman
-    %fonts<t>   = ($fft); # deb 12, :subset;
-    %fonts<tb>  = ($fftb); # deb 12, :subset;
-    %fonts<ti>  = ($ffti); # deb 12, :subset;
-    %fonts<tbi> = ($fftbi); # deb 12, :subset;
+    %fonts<t>   = $fft;   # deb 12, :subset;
+    %fonts<tb>  = $fftb;  # deb 12, :subset;
+    %fonts<ti>  = $ffti;  # deb 12, :subset;
+    %fonts<tbi> = $fftbi; # deb 12, :subset;
 
     # Helvetica
-    %fonts<h>   = ($ffh); # deb 12, :subset;
-    %fonts<hb>  = ($ffhb); # deb 12, :subset;
-    %fonts<ho>  = ($ffho); # deb 12, :subset;
-    %fonts<hbo> = ($ffhbo); # deb 12, :subset;
+    %fonts<h>   = $ffh;   # deb 12, :subset;
+    %fonts<hb>  = $ffhb;  # deb 12, :subset;
+    %fonts<ho>  = $ffho;  # deb 12, :subset;
+    %fonts<hbo> = $ffhbo; # deb 12, :subset;
 
-   # Courier
-    %fonts<c>   = ($ffc); # deb 12, :subset;
-    %fonts<cb>  = ($ffcb); # deb 12, :subset;
-    %fonts<co>  = ($ffco); # deb 12, :subset;
-    %fonts<cbo> = ($ffcbo); # deb 12, :subset;
+    # Courier
+    %fonts<c>   = $ffc;   # deb 12, :subset;
+    %fonts<cb>  = $ffcb;  # deb 12, :subset;
+    %fonts<co>  = $ffco;  # deb 12, :subset;
+    %fonts<cbo> = $ffcbo; # deb 12, :subset;
 
     # "aliases" for the real names
     %fonts<se>   = %fonts<t>;
