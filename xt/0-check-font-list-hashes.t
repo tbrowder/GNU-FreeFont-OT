@@ -35,11 +35,11 @@ cmp-ok Set(@pcodes), 'cmp', Set(@fc), "primary code sets are equal";
 # alias keys MUST be a member of the %Fonts keys (which are the 
 #   recognized font faces)
  
-my %F  = %Fonts;       # font-name => code
+my %Fo = %Fonts;       # font-name => code
 my %Fa = %FontAliases; # alias     => font-name
 my @fa = [];
 my @fn2 = [];
-for %Fa.kv -> $fname, $alias {
+for %Fa.kv -> $alias, $fname {
    @fn2.push: $fname;
    @fa.push: $alias;
 }
@@ -55,19 +55,21 @@ my $sb = Set(@fa);
 is-deeply $sa (&) $sb, Set.new, "codes and aliases do NOT overlap"; 
 
 # test the codes and aliases hashes
-my @names = <ti o t 1 mb>;
+my @test-names = <ti o t 1 mb>;
+my $tnames = @test-names.join(" ");
+say "Using test names: '$tnames'";
 my $s;
-for @names -> $n {
+for @test-names -> $n {
     if %codes-hash{$n}:exists {
         $s = %codes-hash{$n};
-        say "\$s is a code: '$s'";
+        say "name '$n' is a code: '$s'";
     }
     elsif %aliases-hash{$n}:exists {
         $s = %aliases-hash{$n};
-        say "\$s is an alias: '$s'";
+        say "name '$n' is an alias: '$s'";
     }
     else {
-        say "\$s is: 'undef'";
+        say "name '$n' was NOT found in either hash";
     }
 }
 
