@@ -94,6 +94,7 @@ our %FontAliases is export = %Fonts.invert;
 
 # create some sets to match against
 our $codes-rx   is export = %Fonts.values.join("|");
+our %codes-hash is export = %Fonts.values;
 
 # remove codes from aliases
 for %Fonts.kv -> $k, $code {
@@ -101,4 +102,7 @@ for %Fonts.kv -> $k, $code {
         %FontAliases{$code}:delete;
     }
 }
+
 our $aliases-rx is export = %FontAliases.keys.join("|");
+our %aliases-hash is export = %FontAliases.keys;
+

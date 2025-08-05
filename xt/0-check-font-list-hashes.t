@@ -54,16 +54,22 @@ my $sb = Set(@fa);
 
 is-deeply $sa (&) $sb, Set.new, "codes and aliases do NOT overlap"; 
 
-# test the regex
-my $trx = <[ti t]>;
-my $name = "t";
+# test the codes and aliases hashes
+my @names = <ti o t 1 mb>;
 my $s;
-if $name ~~ /s: ($trx) / {
-    $s = ~$0;
-    say "\$s is: '$s'";
-}
-else {
-    say "\$s is: 'undef'";
+for @names -> $n {
+    if %codes-hash{$n}:exists {
+        $s = %codes-hash{$n};
+        say "\$s is a code: '$s'";
+    }
+    elsif %aliases-hash{$n}:exists {
+        $s = %aliases-hash{$n};
+        say "\$s is an alias: '$s'";
+    }
+    else {
+        say "\$s is: 'undef'";
+    }
 }
 
 done-testing;
+
