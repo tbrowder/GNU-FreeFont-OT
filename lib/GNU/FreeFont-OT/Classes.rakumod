@@ -1,22 +1,30 @@
-use OO::Monitors;
+unit module GNU::FreeFont-OT::Classes;
 
 use PDF::Content::FontObj;
 
+=begin comment
 unit module GNU::FreeFont-OT::Classes;
 
 use GNU::FreeFont-OT::FontList;
 
 monitor GFF is export {
     has $.id = 'gff';
-    
+
     # Method 'get-font' returns a PDF::Content::FontObj object.
     # If the object already exists, that is returned;
     # otherwise, one is instantiated, added to the
     # collection of class objects, and then returned.
     method get-font(
-        $name 
+        $name,
+        :$debug,
         --> PDF::Content::FontObj
-        ) {
+    ) {
+
+        if $debug {
+            say "DEBUG: Input \$name: '$name'";
+            exit;
+        }
+
         my $code;  #  =  $codes-rx;
         my $alias; #  = $aliases-rx;
 
@@ -41,4 +49,4 @@ monitor GFF is export {
         }
     }
 }
-
+=end comment

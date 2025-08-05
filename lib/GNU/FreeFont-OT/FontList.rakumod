@@ -3,67 +3,95 @@ unit module GNU::FreeFont-OT::FontList;
 constant %Fonts is export = %(
     # These are the fonts from GNU FreeFont
     #   with their primary codes (from their Adobe heritage)
-    FreeSerif            => "t",
-    FreeSerif-Italic     => "ti",  # also to
-    FreeSerif-Bold       => "tb",
-    FreeSerif-BoldItalic => "tbi", # also tbo, tob, tib
+    FreeSerif            => "t",                              # 1
+    FreeSerif-Bold       => "tb",                             # 2
+    FreeSerif-Italic     => "ti",  # also to                  # 3
+    FreeSerif-BoldItalic => "tbi", # also tbo, tob, tib       # 4
 
-    FreeSans             => "h",
-    FreeSans-Oblique     => "ho",  # also hi
-    FreeSans-Bold        => "hb",
-    FreeSans-BoldOblique => "hbo", # also hbi, hob, hib
+    FreeSans             => "h",                              # 5
+    FreeSans-Bold        => "hb",                             # 6
+    FreeSans-Oblique     => "ho",  # also hi                  # 7
+    FreeSans-BoldOblique => "hbo", # also hbi, hob, hib       # 8
 
-    FreeMono             => "c",
-    FreeMono-Oblique     => "co",  # also ci
-    FreeMono-Bold        => "cb",
-    FreeMono-BoldOblique => "cbo", # also cbi, cob, cib
+    FreeMono             => "c",                              # 9
+    FreeMono-Bold        => "cb",                             # 10
+    FreeMono-Oblique     => "co",  # also ci                  # 11
+    FreeMono-BoldOblique => "cbo", # also cbi, cob, cib       # 12
 );
 
 # invert the hash and have short names (aliases) as keys
 our %FontAliases is export = %Fonts.invert;
 
 # add some extra keys called "aliases"
-# Courier/FreeMono
-%FontAliases<ci>  = "FreeMono-Oblique";
-%FontAliases<cbi> = "FreeMono-BoldOblique";
-%FontAliases<cob> = "FreeMono-BoldOblique";
-%FontAliases<cib> = "FreeMono-BoldOblique";
-%FontAliases<m>   = "FreeMono";
-%FontAliases<mo>  = "FreeMono-Oblique";
-%FontAliases<mi>  = "FreeMono-Oblique";
-%FontAliases<mb>  = "FreeMono-Bold";
-%FontAliases<mbi> = "FreeMono-BoldOblique";
-%FontAliases<mib> = "FreeMono-BoldOblique";
-%FontAliases<mob> = "FreeMono-BoldOblique";
-%FontAliases<mbo> = "FreeMono-BoldOblique";
+# Time-Roman/FreeSerif
+%FontAliases<se>   = "FreeSerif";            # 1
+%FontAliases<1>    = "FreeSerif";            # 1
+
+%FontAliases<seb>  = "FreeSerif-Bold";       # 2
+%FontAliases<2>    = "FreeSerif-Bold";       # 2
+
+%FontAliases<to>   = "FreeSerif-Italic";     # 3
+%FontAliases<3>    = "FreeSerif-Italic";     # 3
+
+%FontAliases<seo>  = "FreeSerif-Italic";
+%FontAliases<sei>  = "FreeSerif-Italic";
+
+%FontAliases<tbo>  = "FreeSerif-BoldItalic"; # 4
+%FontAliases<4>    = "FreeSerif-BoldItalic"; # 4
+
+%FontAliases<tob>  = "FreeSerif-BoldItalic";
+%FontAliases<tib>  = "FreeSerif-BoldItalic";
+%FontAliases<sebi> = "FreeSerif-BoldItalic";
+%FontAliases<sebo> = "FreeSerif-BoldItalic";
+%FontAliases<seob> = "FreeSerif-BoldItalic";
+%FontAliases<seib> = "FreeSerif-BoldItalic";
 
 # Helvetica/FreeSans
-%FontAliases<hi>   = "FreeSans-Oblique";
-%FontAliases<hbi>  = "FreeSans-BoldOblique";
+%FontAliases<sa>   = "FreeSans";             # 5
+%FontAliases<5>    = "FreeSans";             # 5
+
+%FontAliases<sab>  = "FreeSans-Bold";        # 6
+%FontAliases<6>    = "FreeSans-Bold";        # 6
+
+%FontAliases<hi>   = "FreeSans-Oblique";     # 7
+%FontAliases<7>    = "FreeSans-Oblique";     # 7
+
+%FontAliases<sai>  = "FreeSans-Oblique";
+%FontAliases<sao>  = "FreeSans-Oblique";
+
+%FontAliases<hbi>  = "FreeSans-BoldOblique"; # 8
+%FontAliases<8>    = "FreeSans-BoldOblique"; # 8
+
 %FontAliases<hob>  = "FreeSans-BoldOblique";
 %FontAliases<hib>  = "FreeSans-BoldOblique";
-%FontAliases<sa>   = "FreeSans";
-%FontAliases<sao>  = "FreeSans-Oblique";
-%FontAliases<sai>  = "FreeSans-Oblique";
-%FontAliases<sab>  = "FreeSans-Bold";
 %FontAliases<sabi> = "FreeSans-BoldOblique";
 %FontAliases<sabo> = "FreeSans-BoldOblique";
 %FontAliases<saob> = "FreeSans-BoldOblique";
 %FontAliases<saib> = "FreeSans-BoldOblique";
 
-# Time-Roman/FreeSerif
-%FontAliases<to>   = "FreeSerif-Italic";
-%FontAliases<tbo>  = "FreeSerif-BoldItalic";
-%FontAliases<tob>  = "FreeSerif-BoldItalic";
-%FontAliases<tib>  = "FreeSerif-BoldItalic";
-%FontAliases<se>   = "FreeSerif";
-%FontAliases<seo>  = "FreeSerif-Italic";
-%FontAliases<sei>  = "FreeSerif-Italic";
-%FontAliases<seb>  = "FreeSerif-Bold";
-%FontAliases<sebi> = "FreeSerif-BoldItalic";
-%FontAliases<sebo> = "FreeSerif-BoldItalic";
-%FontAliases<seob> = "FreeSerif-BoldItalic";
-%FontAliases<seib> = "FreeSerif-BoldItalic";
+# Courier/FreeMono
+%FontAliases<m>   = "FreeMono";              # 9
+%FontAliases<9>   = "FreeMono";              # 9
+
+%FontAliases<mb>  = "FreeMono-Bold";         # 10
+%FontAliases<10>  = "FreeMono-Bold";         # 10
+
+%FontAliases<ci>  = "FreeMono-Oblique";      # 11
+%FontAliases<11>  = "FreeMono-Oblique";      # 11
+
+%FontAliases<mo>  = "FreeMono-Oblique";
+%FontAliases<mi>  = "FreeMono-Oblique";
+
+%FontAliases<cbi> = "FreeMono-BoldOblique";  # 12
+%FontAliases<12>  = "FreeMono-BoldOblique";  # 12
+
+%FontAliases<cob> = "FreeMono-BoldOblique";
+%FontAliases<cib> = "FreeMono-BoldOblique";
+%FontAliases<mbi> = "FreeMono-BoldOblique";
+%FontAliases<mib> = "FreeMono-BoldOblique";
+%FontAliases<mob> = "FreeMono-BoldOblique";
+%FontAliases<mbo> = "FreeMono-BoldOblique";
+
 
 # create some sets to match against
 our $codes-rx   is export = %Fonts.keys.join("|");

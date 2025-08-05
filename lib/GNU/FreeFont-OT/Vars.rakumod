@@ -1,2 +1,1 @@
-unit module GNU::FreeFont::Vars;
-
+unit module GNU::FreeFont-OT::Vars;

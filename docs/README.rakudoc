@@ -38,19 +38,21 @@ FontFactory GNU FreeFonts collection.
 
 =head1 Installation requirements
 
-Your system may not have all the required packages to support this Raku
-module. See L<Installation |./Installation.md> for those requiremnts
-to ensure they are installed before running C<zef install GNU::FreeFont-OT>.
+Your system may not have all the required packages to support this
+Raku module. See L<Installation |./Installation.md> for those
+requiremnts to ensure they are installed before running C<zef install
+GNU::FreeFont-OT>.
 
 =head1 Using this module
 
 The following tables show the hash codes (keys) to use to select the
-desired font objects. The first table uses codes derived from the
-GNU FreeFont font family name plus any other descriptors: weight ('Bold'), and slant ('italic' or 'oblique'). The second table shows the Adobe heritage
-font name from which it was derived.
+desired font objects. The first table uses codes derived from the GNU
+FreeFont font family name plus any other descriptors: weight ('Bold'),
+and slant ('italic' or 'oblique'). The second table shows the Adobe
+heritage font name from which it was derived.
 
 Note the I<Code> and I<Code2> columns. Each row contains equivalent
-code you may use to select the desired GNU FreeFont face. 
+code you may use to select the desired GNU FreeFont face.
 
 NOTE: in a future revision you will be able use the reference number
 to select a font face.

@@ -41,7 +41,7 @@ Using this module
 
 The following tables show the hash codes (keys) to use to select the desired font objects. The first table uses codes derived from the GNU FreeFont font family name plus any other descriptors: weight ('Bold'), and slant ('italic' or 'oblique'). The second table shows the Adobe heritage font name from which it was derived.
 
-Note the *Code* and *Code2* columns. Each row contains equivalent code you may use to select the desired GNU FreeFont face. 
+Note the *Code* and *Code2* columns. Each row contains equivalent code you may use to select the desired GNU FreeFont face.
 
 NOTE: in a future revision you will be able use the reference number to select a font face.
 

@@ -50,5 +50,4 @@ else {
     say "WARNING: This test MUST pass in order to publish";
 }
 
-
 done-testing;
