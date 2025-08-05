@@ -1,15 +1,9 @@
 use Test;
 
 use GNU::FreeFont-OT;
-use GNU::FreeFont-OT::Classes;
 
-my $gff  = GNU::FreeFont-OT::Classes::GFF.new;
-my $gff2 = GFF.new;
+my $ff  = GNU::FreeFont-OT.new;
 
-isa-ok $gff, GNU::FreeFont-OT::Classes::GFF;
-isa-ok $gff, GFF;
-
-isa-ok $gff, GNU::FreeFont-OT::Classes::GFF;
-isa-ok $gff2, GFF;
+isa-ok $ff, GNU::FreeFont-OT;
 
 done-testing;
