@@ -6,7 +6,7 @@ use PDF::Font::Loader :load-font;
 use PDF::Content;
 use PDF::Content::FontObj;
 
-unit monitor  GNU::FreeFont-OT;
+unit monitor GNU::FreeFont-OT;
 
 use GNU::FreeFont-OT::FontList;
 use GNU::FreeFont-OT::FontSources;
@@ -20,7 +20,7 @@ submethod TWEAK {
 }
 
 method get-font(
-    Str:D $name,
+    $name,
     :$debug,
     --> PDF::Content::FontObj
 ) {
@@ -29,7 +29,7 @@ method get-font(
         say "DEBUG: Input \$name: '$name'";
         say "       \$codes-rx  : '$codes-rx'";
         say "       \$aliases   : '$aliases-rx'";
-        exit;
+       # exit;
     }
 
     my $code;  #  member of $codes-rx;
@@ -41,10 +41,10 @@ method get-font(
     #   aliases
     #     se, mb
     #     1..12
-    if $name ~~ /$codes-rx/ {
-        $code = $name;
+    if $name ~~ / (<$codes-rx>) / {
+        $code = ~$0;
     }
-    elsif $name ~~ /$aliases-rx/ {
+    elsif $name ~~ / [$aliases-rx] / {
         $alias = $name;
     }
     else {

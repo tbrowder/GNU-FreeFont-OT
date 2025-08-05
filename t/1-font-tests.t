@@ -18,10 +18,10 @@ else {
     say "WARNING: This test MUST pass in order to publish";
 }
 
-=finish
+$font  = $ff.get-font: <t>;
+$font2 = $ff.get-font: <sa>;
 
-$font  = $ff.fonts<t>;
-$font2 = $ff.fonts<sa>;
+=finish
 
 isa-ok $font, PDF::Content::FontObj;
 isa-ok $font2, PDF::Content::FontObj;

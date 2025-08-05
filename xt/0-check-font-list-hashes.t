@@ -54,4 +54,16 @@ my $sb = Set(@fa);
 
 is-deeply $sa (&) $sb, Set.new, "codes and aliases do NOT overlap"; 
 
+# test the regex
+my $trx = <[ti t]>;
+my $name = "t";
+my $s;
+if $name ~~ /s: ($trx) / {
+    $s = ~$0;
+    say "\$s is: '$s'";
+}
+else {
+    say "\$s is: 'undef'";
+}
+
 done-testing;
