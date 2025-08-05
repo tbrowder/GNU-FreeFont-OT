@@ -10,7 +10,7 @@ isa-ok $ff, GNU::FreeFont-OT;
 
 if $debug {
     say "WARNING: This test MUST pass in order to publish";
-    exit;
+#   exit;
 }
 
 my $last-font;

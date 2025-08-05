@@ -23,7 +23,7 @@ method get-font(
     --> PDF::Content::FontObj
 ) {
 
-    if $debug {
+    if 1 or $debug {
         say "DEBUG: Input \$name: '$name'";
         say "       \$codes-rx  : '$codes-rx'";
         say "       \$aliases   : '$aliases-rx'";
