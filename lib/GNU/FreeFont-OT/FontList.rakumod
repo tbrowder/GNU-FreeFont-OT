@@ -25,19 +25,19 @@ our %FontAliases is export = %Fonts.invert;
 # add some extra keys called "aliases"
 # Time-Roman/FreeSerif
 %FontAliases<se>   = "FreeSerif";            # 1
-%FontAliases{"1"}    = "FreeSerif";            # 1
+%FontAliases{1}    = "FreeSerif";            # 1
 
 %FontAliases<seb>  = "FreeSerif-Bold";       # 2
-%FontAliases{"2"}    = "FreeSerif-Bold";       # 2
+%FontAliases{2}    = "FreeSerif-Bold";       # 2
 
 %FontAliases<to>   = "FreeSerif-Italic";     # 3
-%FontAliases{"3"}    = "FreeSerif-Italic";     # 3
+%FontAliases{3}    = "FreeSerif-Italic";     # 3
 
 %FontAliases<seo>  = "FreeSerif-Italic";
 %FontAliases<sei>  = "FreeSerif-Italic";
 
 %FontAliases<tbo>  = "FreeSerif-BoldItalic"; # 4
-%FontAliases{"4"}    = "FreeSerif-BoldItalic"; # 4
+%FontAliases{4}    = "FreeSerif-BoldItalic"; # 4
 
 %FontAliases<tob>  = "FreeSerif-BoldItalic";
 %FontAliases<tib>  = "FreeSerif-BoldItalic";
@@ -48,19 +48,19 @@ our %FontAliases is export = %Fonts.invert;
 
 # Helvetica/FreeSans
 %FontAliases<sa>   = "FreeSans";             # 5
-%FontAliases{"5"}    = "FreeSans";             # 5
+%FontAliases{5}    = "FreeSans";             # 5
 
 %FontAliases<sab>  = "FreeSans-Bold";        # 6
-%FontAliases{"6"}    = "FreeSans-Bold";        # 6
+%FontAliases{6}    = "FreeSans-Bold";        # 6
 
 %FontAliases<hi>   = "FreeSans-Oblique";     # 7
-%FontAliases{"7"}    = "FreeSans-Oblique";     # 7
+%FontAliases{7}    = "FreeSans-Oblique";     # 7
 
 %FontAliases<sai>  = "FreeSans-Oblique";
 %FontAliases<sao>  = "FreeSans-Oblique";
 
 %FontAliases<hbi>  = "FreeSans-BoldOblique"; # 8
-%FontAliases{"8"}    = "FreeSans-BoldOblique"; # 8
+%FontAliases{8}    = "FreeSans-BoldOblique"; # 8
 
 %FontAliases<hob>  = "FreeSans-BoldOblique";
 %FontAliases<hib>  = "FreeSans-BoldOblique";
@@ -71,19 +71,19 @@ our %FontAliases is export = %Fonts.invert;
 
 # Courier/FreeMono
 %FontAliases<m>   = "FreeMono";              # 9
-%FontAliases{"9"}   = "FreeMono";              # 9
+%FontAliases{9}   = "FreeMono";              # 9
 
 %FontAliases<mb>  = "FreeMono-Bold";         # 10
-%FontAliases{"10"}  = "FreeMono-Bold";         # 10
+%FontAliases{10}  = "FreeMono-Bold";         # 10
 
 %FontAliases<ci>  = "FreeMono-Oblique";      # 11
-%FontAliases{"11"}  = "FreeMono-Oblique";      # 11
+%FontAliases{11}  = "FreeMono-Oblique";      # 11
 
 %FontAliases<mo>  = "FreeMono-Oblique";
 %FontAliases<mi>  = "FreeMono-Oblique";
 
 %FontAliases<cbi> = "FreeMono-BoldOblique";  # 12
-%FontAliases{"12"}  = "FreeMono-BoldOblique";  # 12
+%FontAliases{12}  = "FreeMono-BoldOblique";  # 12
 
 %FontAliases<cob> = "FreeMono-BoldOblique";
 %FontAliases<cib> = "FreeMono-BoldOblique";
@@ -97,9 +97,14 @@ our $codes-rx   is export = %Fonts.values.join("|");
 
 my @clist;
 for %Fonts.values -> $v {
-    @clist.push: "$v";
+    @clist.push: $v;
 }
-our $codes-hash is export = set @clist; #(%Fonts.values).List;
+my %cchash;
+for @clist {
+    %cchash{$_} = True;
+}
+
+our %codes-hash is export = %cchash; # set @clist; #(%Fonts.values).List;
 
 # remove codes from aliases
 for %Fonts.kv -> $k, $code {
@@ -112,7 +117,12 @@ our $aliases-rx is export = %FontAliases.keys.join("|");
 
 my @alist;
 for %FontAliases.keys -> $v {
-    @alist.push: "$v";
+    @alist.push: $v;
 }
-our $aliases-hash is export = set @alist; # (%FontAliases.keys).List;
+my %aahash;
+for @alist {
+    %aahash{$_} = True;
+}
+
+our %aliases-hash is export = %aahash; #set @alist; # (%FontAliases.keys).List;
 
