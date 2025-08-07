@@ -1,15 +1,20 @@
 use OO::Monitors;
 
 use MacOS::NativeLib "*";
+use PDF::Lite;
+use PDF::API6;
+use PDF::Class;
 use PDF::Font::Loader::HarfBuzz;
-use PDF::Font::Loader :load-font;
+use PDF::Font::Loader :&load-font;
 use PDF::Content;
 use PDF::Content::FontObj;
+
+use Font::FreeType;
 
 unit monitor GNU::FreeFont-OT;
 
 use GNU::FreeFont-OT::FontList;
-use GNU::FreeFont-OT::FontSources;
+use GNU::FreeFont-OT::FPaths;
 
 has %.loaded-fonts;
 has %.font-file-paths;
@@ -39,13 +44,18 @@ method get-font(
     #   codes
     #     t,  cb
     #   aliases
-    #     se, mb
-    #     1..12
-    if $name ~~ / (<$codes-rx>) / {
-        $code = ~$0;
+    #     se, mb, 1..12
+
+    my $n = $name;
+    if %codes-hash{$n}:exists {
+        $code = %codes-hash{$n};
+        say "name '$n' is a code: '$code'" if $debug;
     }
-    elsif $name ~~ / [$aliases-rx] / {
-        $alias = $name;
+    elsif %aliases-hash{$n}:exists {
+        $alias = %aliases-hash{$n};
+        say "name '$n' is an alias: '$alias'" if $debug;
+        # important: get the code from the aliases hash
+        $code = %FontAliases{$alias};
     }
     else {
         say qq:to/HERE/;
@@ -54,9 +64,14 @@ method get-font(
         HERE
         exit(1);
     }
-    # get the code directly OR from the alias input
-    # if the font is already loaded 
-    #   return it
+
+    # if the font is already loaded return it
+    return self.loaded-fonts{$code} if self.loaded-fonts{$code}:exists;
+
     # else
     # load the font, then return it 
+    my $font-file = self.font-file-paths{$code};
+    my $font = PDF::Font::Loader.load-font: :file($font-file);
+    self.loaded-fonts{$code} = $font; #PDF::Font::Loader.load-font: :file($font-file);
+    #return $ff.loaded-fonts{$code};
 }

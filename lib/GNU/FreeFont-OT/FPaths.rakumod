@@ -1,4 +1,4 @@
-unit module GNU::FreeFont-OT::FontSources;
+unit module GNU::FreeFont-OT::FPaths;
 
 use MacOS::NativeLib "*";
 
@@ -39,26 +39,26 @@ sub get-font-file-paths-hash(:$debug --> Hash) is export {
     # I grew up with in the PS days:
     # 
     # Times-Roman
-    my $fft   = "$fontdir/FreeSerif.otf";
-    my $fftb  = "$fontdir/FreeSerifBold.otf";
-    my $ffti  = "$fontdir/FreeSerifItalic.otf";
-    my $fftbi = "$fontdir/FreeSerifBoldItalic.otf";
+    my $fft   = "$fontdir/FreeSerif.otf".IO;
+    my $fftb  = "$fontdir/FreeSerifBold.otf".IO;
+    my $ffti  = "$fontdir/FreeSerifItalic.otf".IO;
+    my $fftbi = "$fontdir/FreeSerifBoldItalic.otf".IO;
 
     # Helvetica
-    my $ffh   = "$fontdir/FreeSans.otf";
-    my $ffhb  = "$fontdir/FreeSansBold.otf";
-    my $ffho  = "$fontdir/FreeSansOblique.otf";
-    my $ffhbo = "$fontdir/FreeSansBoldOblique.otf";
+    my $ffh   = "$fontdir/FreeSans.otf".IO;
+    my $ffhb  = "$fontdir/FreeSansBold.otf".IO;
+    my $ffho  = "$fontdir/FreeSansOblique.otf".IO;
+    my $ffhbo = "$fontdir/FreeSansBoldOblique.otf.IO";
 
    # Courier
-    my $ffc   = "$fontdir/FreeMono.otf";
-    my $ffcb  = "$fontdir/FreeMonoBold.otf";
-    my $ffco  = "$fontdir/FreeMonoOblique.otf";
-    my $ffcbo = "$fontdir/FreeMonoBoldOblique.otf";
+    my $ffc   = "$fontdir/FreeMono.otf".IO;
+    my $ffcb  = "$fontdir/FreeMonoBold.otf".IO;
+    my $ffco  = "$fontdir/FreeMonoOblique.otf".IO;
+    my $ffcbo = "$fontdir/FreeMonoBoldOblique.otf.IO";
 
     my %fonts;
 
-    # get paths, dont load
+    # get paths, don't load
     # %fonts<t>   = load :file($fft); # deb 12, :subset;
 
     # Times-Roman

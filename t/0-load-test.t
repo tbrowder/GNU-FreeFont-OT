@@ -6,7 +6,7 @@ my @modules = <
     GNU::FreeFont-OT::Classes
     GNU::FreeFont-OT::Subs
     GNU::FreeFont-OT::Vars
-    GNU::FreeFont-OT::FontSources
+    GNU::FreeFont-OT::FPaths
 >;
 
 plan @modules.elems;

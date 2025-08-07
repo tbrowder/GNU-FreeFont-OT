@@ -11,9 +11,9 @@ sub print-font-sample(
     :$debug
 ) is export {
 
-    my $ff = GNU::FreeFont-OT::Classes::GFF.new;
+    my $ff = GNU::FreeFont-OT.new;
 
-    my $f = $ff.get-font: "1";
+    my $f = $ff.get-font: 1;
     my $fn = $f.name;
 
     say "DEBUG: Face name: $fn";
