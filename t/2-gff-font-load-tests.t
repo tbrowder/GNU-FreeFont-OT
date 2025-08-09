@@ -12,18 +12,18 @@ use PDF::Content::FontObj;
 use PDF::Lite;
 use Font::FreeType;
 
-use GNU::FreeFont-OT;
-use GNU::FreeFont-OT::FontList;
-use GNU::FreeFont-OT::FPaths;
+use GNU::FreeFont-OTF;
+use GNU::FreeFont-OTF::FontList;
+use GNU::FreeFont-OTF::FPaths;
 
 my ($fpath, $fpath2);
 my ($font, $font2);
 
-my $ff = GNU::FreeFont-OT.new;
-isa-ok $ff, GNU::FreeFont-OT, "good GNU::FreeFont object";
+my $ff = GNU::FreeFont-OTF.new;
+isa-ok $ff, GNU::FreeFont-OTF, "good GNU::FreeFont object";
 
 my %h = $fpath = $ff.font-file-paths;
-isa-ok %h, Hash; # GNU::FreeFont-OT, "good GNU::FreeFont object";
+isa-ok %h, Hash; # GNU::FreeFont-OTF, "good GNU::FreeFont object";
 
 my @k  = %h.keys.sort;
 my $nk = @k.elems;

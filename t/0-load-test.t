@@ -1,12 +1,12 @@
 use Test;
 
 my @modules = <
-    GNU::FreeFont-OT
-    GNU::FreeFont-OT::FontList
-    GNU::FreeFont-OT::Classes
-    GNU::FreeFont-OT::Subs
-    GNU::FreeFont-OT::Vars
-    GNU::FreeFont-OT::FPaths
+    GNU::FreeFont-OTF
+    GNU::FreeFont-OTF::FontList
+    GNU::FreeFont-OTF::Classes
+    GNU::FreeFont-OTF::Subs
+    GNU::FreeFont-OTF::Vars
+    GNU::FreeFont-OTF::FPaths
 >;
 
 plan @modules.elems;

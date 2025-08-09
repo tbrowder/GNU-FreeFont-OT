@@ -17,19 +17,19 @@
   ],
   "description": "Provides routines for using the GNU FreeType font in OpenType format \n",
   "license": "Artistic-2.0",
-  "name": "GNU::FreeFont-OT",
+  "name": "GNU::FreeFont-OTF",
   "perl": "6.d",
   "provides": {
-    "GNU::FreeFont-OT": "lib/GNU/FreeFont-OT.rakumod",
-    "GNU::FreeFont-OT::Classes": "lib/GNU/FreeFont-OT/Classes.rakumod",
-    "GNU::FreeFont-OT::FontList": "lib/GNU/FreeFont-OT/FontList.rakumod",
-    "GNU::FreeFont-OT::FontSources": "lib/GNU/FreeFont-OT/FontSources.rakumod",
-    "GNU::FreeFont-OT::Subs": "lib/GNU/FreeFont-OT/Subs.rakumod",
-    "GNU::FreeFont-OT::Vars": "lib/GNU/FreeFont-OT/Vars.rakumod"
+    "GNU::FreeFont-OTF": "lib/GNU/FreeFont-OTF.rakumod",
+    "GNU::FreeFont-OTF::Classes": "lib/GNU/FreeFont-OTF/Classes.rakumod",
+    "GNU::FreeFont-OTF::FPaths": "lib/GNU/FreeFont-OTF/FPaths.rakumod",
+    "GNU::FreeFont-OTF::FontList": "lib/GNU/FreeFont-OTF/FontList.rakumod",
+    "GNU::FreeFont-OTF::Subs": "lib/GNU/FreeFont-OTF/Subs.rakumod",
+    "GNU::FreeFont-OTF::Vars": "lib/GNU/FreeFont-OTF/Vars.rakumod"
   },
   "resources": [
   ],
-  "source-url": "https://github.com/tbrowder/GNU-FreeFont-OT.git",
+  "source-url": "https://github.com/tbrowder/GNU-FreeFont-OTF.git",
   "tags": [
     "font PDF GNU FreeFont OpenType"
   ],

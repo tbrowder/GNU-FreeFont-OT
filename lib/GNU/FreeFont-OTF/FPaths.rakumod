@@ -1,4 +1,4 @@
-unit module GNU::FreeFont-OT::FPaths;
+unit module GNU::FreeFont-OTF::FPaths;
 
 use MacOS::NativeLib "*";
 

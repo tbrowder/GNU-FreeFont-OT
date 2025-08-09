@@ -1,4 +1,4 @@
-unit module GNU::FreeFont-OT::FontList;
+unit module GNU::FreeFont-OTF::FontList;
 
 our %Fonts is export = %(
     # These are the fonts from GNU FreeFont

@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/tbrowder/GNU-FreeFont-OT/actions/workflows/linux.yml/badge.svg)](https://github.com/tbrowder/GNU-FreeFont-OT/actions) [![Actions Status](https://github.com/tbrowder/GNU-FreeFont-OT/actions/workflows/macos.yml/badge.svg)](https://github.com/tbrowder/GNU-FreeFont-OT/actions) [![Actions Status](https://github.com/tbrowder/GNU-FreeFont-OT/actions/workflows/windows.yml/badge.svg)](https://github.com/tbrowder/GNU-FreeFont-OT/actions)
+[![Actions Status](https://github.com/tbrowder/GNU-FreeFont-OTF/actions/workflows/linux.yml/badge.svg)](https://github.com/tbrowder/GNU-FreeFont-OTF/actions) [![Actions Status](https://github.com/tbrowder/GNU-FreeFont-OTF/actions/workflows/macos.yml/badge.svg)](https://github.com/tbrowder/GNU-FreeFont-OTF/actions) [![Actions Status](https://github.com/tbrowder/GNU-FreeFont-OTF/actions/workflows/windows.yml/badge.svg)](https://github.com/tbrowder/GNU-FreeFont-OTF/actions)
 
 NAME
 ====

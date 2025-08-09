@@ -11,10 +11,10 @@ use PDF::Content::FontObj;
 
 use Font::FreeType;
 
-unit monitor GNU::FreeFont-OT;
+unit monitor GNU::FreeFont-OTF;
 
-use GNU::FreeFont-OT::FontList;
-use GNU::FreeFont-OT::FPaths;
+use GNU::FreeFont-OTF::FontList;
+use GNU::FreeFont-OTF::FPaths;
 
 has %.loaded-fonts;
 has %.font-file-paths;

@@ -12,7 +12,7 @@ use PDF::Content::FontObj;
 #use PDF::Lite;
 
 # testing the file path getter:
-use GNU::FreeFont-OT::FPaths;
+use GNU::FreeFont-OTF::FPaths;
 my %fpaths = get-font-file-paths-hash;
 
 my ($fpath, $fpath2);

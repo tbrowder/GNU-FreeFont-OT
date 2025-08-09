@@ -6,7 +6,7 @@ use PDF::Font::Loader :load-font;
 
 my $os = QueryOS.new;
 
-my $ofil = "GNU-FreeFont-OT-samples.pdf";
+my $ofil = "GNU-FreeFont-OTF-samples.pdf";
 
 my $pdf = PDF::Lite.new;
 

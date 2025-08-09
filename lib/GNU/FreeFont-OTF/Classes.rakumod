@@ -1,11 +1,11 @@
-unit module GNU::FreeFont-OT::Classes;
+unit module GNU::FreeFont-OTF::Classes;
 
 use PDF::Content::FontObj;
 
 =begin comment
-unit module GNU::FreeFont-OT::Classes;
+unit module GNU::FreeFont-OTF::Classes;
 
-use GNU::FreeFont-OT::FontList;
+use GNU::FreeFont-OTF::FontList;
 
 monitor GFF is export {
     has $.id = 'gff';

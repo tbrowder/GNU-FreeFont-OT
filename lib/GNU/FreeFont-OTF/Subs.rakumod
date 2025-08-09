@@ -1,17 +1,17 @@
-unit module GNU::FreeFont-OT::Subs;
+unit module GNU::FreeFont-OTF::Subs;
 
 use PDF::Lite;
 use PDF::Content::Page :PageSizes;
 
-use GNU::FreeFont-OT;
-use GNU::FreeFont-OT::Classes;
-use GNU::FreeFont-OT::FontList;
+use GNU::FreeFont-OTF;
+use GNU::FreeFont-OTF::Classes;
+use GNU::FreeFont-OTF::FontList;
 
 sub print-font-sample(
     :$debug
 ) is export {
 
-    my $ff = GNU::FreeFont-OT.new;
+    my $ff = GNU::FreeFont-OTF.new;
 
     my $f = $ff.get-font: 1;
     my $fn = $f.name;

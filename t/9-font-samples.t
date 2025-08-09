@@ -3,10 +3,10 @@ use Test;
 use PDF::Lite;
 use PDF::Content::Page;
 
-use GNU::FreeFont-OT;
-use GNU::FreeFont-OT::FontList;
-use GNU::FreeFont-OT::Classes;
-use GNU::FreeFont-OT::Subs;
+use GNU::FreeFont-OTF;
+use GNU::FreeFont-OTF::FontList;
+use GNU::FreeFont-OTF::Classes;
+use GNU::FreeFont-OTF::Subs;
 
 my $debug = 1;
 
